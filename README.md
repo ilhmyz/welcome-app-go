@@ -84,3 +84,4 @@ spec:
 
 
 ### 5. Infra Diagram
+<img src="./infra/arch-infra-ha.png"/>
