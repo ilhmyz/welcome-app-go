@@ -22,6 +22,7 @@ docker run -p 8000:5000 welcome-app-go:testing
 
 file docker compose berada di directory [`./docker/docker-compose.yaml`](./docker/docker-compose.yaml)
 
+untuk hasil push ke dockerhub bisa dilihat di repo [`ilhmyz/welcome-app-go`](https://hub.docker.com/r/ilhmyz/welcome-app-go/tags)
 ### 3. Github Actions
 untuk github action berada di [.github/workflows](.github/workflows)
 script tersebut akan berjalan dengan trigger manual karena menggunakan `workflow_dispatch` sebagai eventnya. script tersebut akan build docker image dan push ke dockerhub, deploy ke server dengan menggunakan docker/docker-compose (pastikan server sudah terinstal docker)
