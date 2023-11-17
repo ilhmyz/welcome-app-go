@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: simpel-app-go:welcome
-    # image: ilhmyz/simpel-app-go:latest
+    image: welcome-app-go:testing # menggunakan image local
+    # image: ilhmyz/welcome-app-go:latest # menggunakan image yang sudah di push ke dockerhub
     ports:
       - "8000:5000"
