@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: welcome-app-go
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: welcome-app-go
+  template:
+    metadata:
+      labels:
+        app: welcome-app-go
+    spec:
+      containers:
+      - name: welcome-app-go
+        image: ilhmyz/welcome-app-go:latest
+        ports:
+        - containerPort: 5000
