@@ -1,0 +1,21 @@
+name: Build and Push Docker Image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-to-server:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Deploy App
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/welcome-app-go:latest
+            docker run -d -p 8000:5000 ${{ secrets.DOCKER_HUB_USERNAME }}/welcome-app-go:latest
+            docker ps
